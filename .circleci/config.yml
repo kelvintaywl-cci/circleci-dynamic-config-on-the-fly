@@ -1,0 +1,32 @@
+version: 2.1
+
+setup:
+
+orbs:
+  # NOTE: using current latest at 0.2.0
+  continuation: circleci/continuation@0.2.0
+  cli: circleci/circleci-cli@0.1.9
+
+jobs:
+  setup:
+    executor: continuation/default
+    steps:
+      - checkout # checkout code
+      - run:
+          name: Generate config
+          command: |
+            cd .circleci
+            sh ./generate-next-config.sh
+      - cli/install
+      - run:
+          name: Validate generated config
+          command: |
+            command -v circleci
+            circleci config validate .circleci/next-config.yml
+      - continuation/continue:
+          configuration_path: .circleci/next-config.yml
+
+workflows:
+  main:
+    jobs:
+      - setup

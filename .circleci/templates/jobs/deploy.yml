@@ -1,0 +1,15 @@
+  deploy:
+    docker:
+      - image: cimg/base:stable
+    parameters:
+      aws-region:
+        type: string
+    steps:
+      - run:
+          name: "Print job parameter"
+          command: |
+            echo "<< parameters.aws-region >>"
+      - run:
+          name: "Print pipeline parameter"
+          command: |
+            echo "<< pipeline.parameters.foo >>"
