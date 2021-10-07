@@ -1,5 +1,6 @@
 
 workflows:
+  version: 2
   continued:
     jobs:
       - deploy:

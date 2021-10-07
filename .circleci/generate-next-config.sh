@@ -2,6 +2,8 @@
 # TODO: make this agnostic to directory from where script is run,
 # or raise an error in the worst case.
 
+cat templates/_header.yml >> next-config.yml
+
 cat templates/parameters.yml >> next-config.yml
 
 # add jobs
