@@ -1,6 +1,6 @@
 version: 2.1
 
-setup:
+setup: true
 
 orbs:
   # NOTE: using current latest at 0.2.0
