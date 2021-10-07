@@ -22,6 +22,7 @@ jobs:
           name: Validate generated config
           command: |
             command -v circleci
+            cat .circleci/next-config.yml
             circleci config validate .circleci/next-config.yml
       - continuation/continue:
           configuration_path: .circleci/next-config.yml

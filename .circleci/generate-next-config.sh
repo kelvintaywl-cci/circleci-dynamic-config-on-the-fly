@@ -5,7 +5,7 @@
 cat templates/parameters.yml >> next-config.yml
 
 # add jobs
-echo -e "jobs:" >> next-config.yml
+echo "jobs:\n" >> next-config.yml
 cat templates/jobs/deploy.yml >> next-config.yml
 
 cat templates/workflows.yml >> next-config.yml
