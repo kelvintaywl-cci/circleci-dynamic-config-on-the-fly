@@ -1,0 +1,6 @@
+
+workflows:
+  continued:
+    jobs:
+      - deploy:
+          aws-region: 'us-west-2'

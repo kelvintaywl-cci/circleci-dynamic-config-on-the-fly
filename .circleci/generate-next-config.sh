@@ -8,10 +8,4 @@ cat templates/parameters.yml >> next-config.yml
 echo -e "jobs:" >> next-config.yml
 cat templates/jobs/deploy.yml >> next-config.yml
 
-echo -e "
-workflows:
-  continued:
-    jobs:
-      - deploy:
-          aws-region: 'us-west-2'
-  " >> next-config.yml
+cat templates/workflows.yml >> next-config.yml
